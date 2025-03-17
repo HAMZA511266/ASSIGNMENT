@@ -1,0 +1,87 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title styling */
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Flexbox container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between boxes */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Box styling */
+.box {
+    flex: 1 1 30%;  /* Ensures flexible width for better alignment */
+    max-width: 30%; /* Prevents exceeding 30% */
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 20px;
+    position: relative;
+    text-align: left;
+}
+
+/* Section title positioning and colors */
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    padding: 5px 10px;
+    border: 1px solid black;
+    font-weight: bold;
+    text-transform: uppercase; /* Makes text capital */
+}
+
+/* Specific colors for each section */
+.box:nth-child(1) .section-title { /* Chicken */
+    background-color: pink;
+}
+
+.box:nth-child(2) .section-title { /* Beef */
+    background-color: red;
+    color: white;
+}
+
+.box:nth-child(3) .section-title { /* Sushi */
+    background-color: yellow;
+}
+
+/* Tablet View */
+@media (max-width: 991px) {
+    .box {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+
+    .box:nth-child(3) {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+    .box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
